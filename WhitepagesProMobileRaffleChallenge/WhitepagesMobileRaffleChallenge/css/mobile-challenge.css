@@ -60,7 +60,7 @@ body, input, select, p, a{
   font-family: 'OpenSans-Light', Helvetica, Arial, 'sans-serif';
 }
 
-h1, h2, h3, h4, h5, h6, input, button, select {
+h1, h2, h3, h4, h5, h6, input, input[type="submit"], select {
   color:#636667;
 }
 
@@ -82,9 +82,9 @@ h1{
 }
 
 #index{
-    max-width:700px;
-    width:98%;
-    margin:0 2% 0 0;
+  max-width:700px;
+  width:98%;
+  margin:0 2% 0 0;
 }
 
 input[type="submit"]{
@@ -109,6 +109,12 @@ input[type="submit"]:hover{
   background:#e8e8e8;
 }
 
+input[type="submit"]:active{
+  outline:0;
+  border:1px solid #4f4f4f;
+  color:#fff;
+  background:#4f4f4f;
+}
 
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'Pro-Icons';
@@ -173,6 +179,7 @@ input[type="submit"]:hover{
 .headline{
   position:relative;
   margin-bottom:10px;
+  max-width:1000px;
 }
 
 .headline span{
@@ -289,65 +296,68 @@ input[type="submit"]:hover{
   top:30px;
 }
 .output h1{
-  font-size:150px;
+  font-size:140px;
 }
-
-.output button{
+.output input[type="submit"]{
   font-size:30px;
 }
-
 .output .left-col{
   width:40%;
   text-align: center;
-  padding-top:50px;
+  padding-top:45px;
 }
 .output .right-col{
   width:50%;
-  margin: 0 7% 0 3%;
+  margin:0;
+  padding-bottom:20px;
 }
 .entity{
   width:100%;
   background-color: #fff;
   color:#4f4f4f;
-  border:1px solid #f6f6f6;
-  padding:40px 15px;
-  margin:10px auto;
+  border:1px solid #e9eaea;
+  padding:40px 10px 40px 30px;
+  margin:0 auto -1px auto;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.05);
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.05);
 }
 .entity ul{
   list-style-type: none;
-  margin:0;
+  margin:0 0 0 15px;
   padding:0;
   float:left;
 }
 .entity li{
-  margin:3px 0 6px 0;
+  margin:3px 0 4px 0;
   font-size:18px;
+}
+.entity li:first-child{
+  font-size:28px;
 }
 .entity ul span{
   margin-right:8px;
   color: #95958e;
 }
-
-.entity li:first-child{
-  font-size:28px;
-}
 .circle{
   float:left;
   width:25%;
+  margin-top:4px;
   text-align: center;
 }
 .icon-pro span{
   display: inline-block;
-  width:65px;
-  height:65px;
-  font-size:34px;
-  line-height: 62px;
+  padding-left:1px;
+  width:60px;
+  height:60px;
+  font-size:30px;
+  line-height: 60px;
   text-align: center;
-  background-color: #bbbbba;
+  background-color: rgba(99,102,103,.9);
   color:#fff;
-  -webkit-box-shadow: inset 2px 3px 3px 0px rgba(0,0,0,0.2);
-  -moz-box-shadow: inset 2px 3px 3px 0px rgba(0,0,0,0.2);
-  box-shadow: inset 2px 3px 3px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: inset 2px 3px 3px 0px rgba(0,0,0,0.15);
+  -moz-box-shadow: inset 2px 3px 3px 0px rgba(0,0,0,0.15);
+  box-shadow: inset 2px 3px 3px 0px rgba(0,0,0,0.15);
   -webkit-border-radius: 40px; 
   -moz-border-radius: 40px; 
   border-radius:40px;
@@ -356,19 +366,28 @@ input[type="submit"]:hover{
 .phone-data .icon-pro{
   display: inline-block;
   padding:5px;
-  background-color: #bbbbba;
+  background-color: rgba(99,102,103,.9);
   -webkit-border-radius: 45px; 
   -moz-border-radius: 45px; 
   border-radius:45px;
 }
 
 .phone-data .icon-pro span{
-  width:70px;
-  height:70px;
-  font-size:42px;
-  line-height: 68px;
-  background-color: #9e9e9c;
+  width:65px;
+  height:65px;
+  font-size:38px;
+  line-height: 63px;
   border:5px solid #fff;
+}
+
+.has-app{
+  padding:0 10px 0 30px;
+}
+.has-app span{
+  margin-right:10px;
+}
+.has-app p{
+  margin-left:130px;
 }
 
 
@@ -389,7 +408,7 @@ input[type="submit"]:hover{
   h1{
     font-size: 160px;
   }
-  button{
+  input[type="submit"]{
     font-size:30px;
     padding:12px 40px;
   }
@@ -428,13 +447,33 @@ input[type="submit"]:hover{
     font-size:20px;
     max-width:310px;
   }
+
+  /*OUTPUT PAGE*/
+  .output{
+    width:95%;
+    margin: 0 auto;
+  }
+  .output .left-col{
+    position:fixed;
+  }
+  .output .right-col{
+    width:50%;
+    margin: 0 0 0 43.5%;
+  }
+  .entity li{
+    margin:3px 0 4px 0;
+    font-size:16px;
+  }
+  .entity li:first-child{
+    font-size:24px;
+  }
 }
 
 @media (min-width : 320px) and (max-width : 768px) {
   h1{
     font-size: 200px;
   }
-  button{
+  input[type="submit"]{
     font-size:35px;
   }
   .content{
@@ -470,19 +509,23 @@ input[type="submit"]:hover{
     max-width:100%;
     margin-top:40px;
   }
-}
 
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-
-}
-/*******
-iPad 3
-*******/
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-
+  /*OUTPUT PAGE*/
+  .output{
+    padding-top:0px;
+    margin:0 20px;
+    background: none;
+  }
+  .output .left-col{
+    display:block;
+    float:none;
+    width:100%;
+  }
+  .output .right-col{
+    width:100%;
+    float:none;
+  }
+  .output .entity{
+    width:auto;
+  }
 }
