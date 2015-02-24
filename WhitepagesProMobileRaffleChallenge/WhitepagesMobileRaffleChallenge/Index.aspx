@@ -32,8 +32,8 @@
             </div>
             <div class="subfield">
                 <div class="check-wrap">
-                  <input type="checkbox" id="check" class="check">
-                  <label for="check">I have the Whitepages Caller ID app.</label>
+                    <asp:CheckBox runat="server" id="callerIdCheck" class="check" />
+                    <label for="check">I have the Whitepages Caller ID app.</label>
                 </div>
                 <asp:Button id="sendPhone" runat="server" CssClass="find_btn" Text="CHALLENGE ACCEPTED" OnClick="ButtonFindClick" />
             </div>
@@ -48,13 +48,13 @@
         jQuery(function ($) {
             var addFields = $('.subfield');
             var phoneField = $('#phone-field input');
-            var check = $('.check');
+            //var check = $('.check');
             var icon = $('.icon');
             var desc = $('.desc');
 
             addFields.hide();
             phoneField.mask("( 999 ) 999 - 9999", { placeholder: "  " });
-            check.prettyCheckable();
+            //check.prettyCheckable();
             phoneField.on('keyup', function () {
                 var keyVal = $(this).val().length;
                 if (keyVal >= 13) {

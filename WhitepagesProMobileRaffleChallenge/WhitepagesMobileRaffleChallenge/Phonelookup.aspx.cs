@@ -39,9 +39,9 @@ namespace WhitePagesPhoneLookup
                 correct.Visible = false;
                 incorrect.Visible = false;
 
+                FindPhoneResults();
             }
 
-            FindPhoneResults();
         }
 
         /// <summary>
@@ -99,35 +99,31 @@ namespace WhitePagesPhoneLookup
                     }
                     else
                     {
-                        //this.ResultDiv.Visible = false;
-                        //this.errorBox.Visible = true;
-                        //this.LiteralMessage.Text = errorMessage;
+                      
                     }
                 }
                 else
                 {
-                    //this.ResultDiv.Visible = false;
-                    //this.errorBox.Visible = true;
-                    //this.LiteralMessage.Text = WhitePagesConstants.PhoneBlankInputMessage;
+                    
                 }
             }
             catch (Exception ex)
             {
-                //this.ResultDiv.Visible = false;
-                //this.errorBox.Visible = true;
-                //this.LiteralMessage.Text = ex.Message;
+                
             }
         }
 
         protected void ButtonAccurateClick(object sender, EventArgs e)
         {
             AddForAccuracyData(true);
+            Response.Redirect("Index.aspx");
         }
 
 
         protected void ButtonInAccurateClick(object sender, EventArgs e)
         {
             AddForAccuracyData(false);
+            Response.Redirect("Index.aspx");
         }
 
         private void PopulateRaffleTickets(Result resultData)
@@ -165,6 +161,11 @@ namespace WhitePagesPhoneLookup
         {
             // Creating PhoneLookupData object to fill the phone lookup data.
             Result resultData = new Result();
+
+            if (Convert.ToBoolean(Request.QueryString["IsCallerId"]) == true)
+            {
+                resultData.DataCounters++;
+            }
 
             try
             {
@@ -413,8 +414,13 @@ namespace WhitePagesPhoneLookup
                                     }
                                     
                                     resultData.SetPeople(peopleList.ToArray());
-                                    List<Location>  locationList = ParseLocationData(dictionaryObj, locationKeyList);
-                                    resultData.SetLocation(locationList.ToArray());
+                                    List<Location> locationList = ParseLocationData(dictionaryObj, locationKeyList);
+
+                                    if (locationList.Count > 0)
+                                    {
+                                        resultData.SetLocation(locationList.ToArray());
+                                    }
+
                                 }
 
                                 if (resultData.GetLocation() == null && phoneAssociatedLocation.Length > 0)
@@ -460,9 +466,23 @@ namespace WhitePagesPhoneLookup
                     {
                         location.ReceivingMail = (bool)(locationKeyObject["is_receiving_mail"]);
                     }
-                    location.Usage = (string)locationKeyObject["usage"];
-                    location.DeliveryPoint = (string)locationKeyObject["delivery_point"];
 
+                    if ((string)locationKeyObject["usage"] != null)
+                    {
+                        location.Usage = (string)locationKeyObject["usage"];
+                    }
+                    else
+                    {
+                        location.Usage = "Unknown";
+                    }
+                    if ((string)locationKeyObject["delivery_point"] != null)
+                    {
+                        location.DeliveryPoint = (string)locationKeyObject["delivery_point"];
+                    }
+                    else
+                    {
+                        location.DeliveryPoint = "Unknown";
+                    }
                     locationList.Add(location);
                 }
             }
