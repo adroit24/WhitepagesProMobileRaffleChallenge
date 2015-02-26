@@ -143,57 +143,51 @@ input[type="submit"]:active{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9e0d7', endColorstr='#d9e0d7', GradientType=1 );
   z-index:-1;
 }
-
 .content{
   position: relative;
   padding-top:80px;
+  width:93%;
+  margin:0 auto;
 }
-
 .left-col, .right-col{
   float:left;
   position: relative;
 }
 .left-col{
-  width:43%;
+  width:40%;
   text-align: right;
 }
 .right-col{
-  width:57%;
+  width:60%;
   text-align: left;
   margin-top:25px;
 }
 
+/* INDEX */
 .logo{
   max-width:300px;
   height:auto;
 }
-
 .phone{
   width:100%;
   max-width:440px;
   height:auto;
-  position: relative;
-  right:-55px;
+  margin-top:10px;
 }
-
 .headline{
   position:relative;
   margin-bottom:10px;
   max-width:1000px;
 }
-
 .headline span{
   color:#3c8fc9;
 }
-
 .phone-wrap{
   position: relative;
 }
-
 #phone-field{
   position: relative;
 }
-
 #phone-field input{
   width:100%;
   height:110px;
@@ -218,7 +212,6 @@ input[type="submit"]:active{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 #phone-field input:focus{
   padding:0 5% 6px 5%;
   text-align: center;
@@ -229,7 +222,6 @@ input[type="submit"]:active{
   font-size:55px;
   outline: 0;
 }
-
 #phone-field input::-moz-placeholder{
   color: #ecdde3;
   padding-top:9px;
@@ -242,7 +234,6 @@ input[type="submit"]:active{
   color: #ecdde3;
   padding-top:9px;
 }
-
 #phone-field .icon{
   display: table;
   clear: both;
@@ -259,11 +250,9 @@ input[type="submit"]:active{
   transition: all ease 1s;
   opacity:.2;
 }
-
 #phone-field input:focus + .icon{
   opacity:0;
 }
-
 .check-wrap{
   width:86%;
   margin:-8px 2% 10px 2%;
@@ -276,9 +265,7 @@ input[type="submit"]:active{
   -moz-border-radius: 8px; 
   border-radius:8px;
 }
-
 .prettycheckbox label{ margin:0 6px 0 10px; }
-
 .desc{
   color:#95958e;
   font-size:22px;
@@ -292,19 +279,37 @@ input[type="submit"]:active{
 }
 .h1img{
   position: relative;
-  left:70px;
-  top:30px;
+  left: 55px;
+  top: 27px;
 }
 .output h1{
   font-size:140px;
+  white-space: nowrap;
+  margin-bottom: 20px;
 }
 .output input[type="submit"]{
+  margin:20px auto;
   font-size:30px;
+  display: block;
+}
+.icon-pro4{
+  font-size: 25px;
+  border:1px solid #eee;
+  color:#eee;
+  padding:30px;
+  -webkit-border-radius: 100px; 
+  -moz-border-radius: 100px; 
+  border-radius:100px;
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  left:-50px;
+  margin-top:70px;
 }
 .output .left-col{
   width:40%;
   text-align: center;
-  padding-top:45px;
+  padding-top:60px;
 }
 .output .right-col{
   width:50%;
@@ -315,25 +320,34 @@ input[type="submit"]:active{
   width:100%;
   background-color: #fff;
   color:#4f4f4f;
-  border:1px solid #e9eaea;
-  padding:40px 10px 40px 30px;
+  border:1px solid #d3d3d3  ;
+  padding:40px 10px 20px 30px;
   margin:0 auto -1px auto;
   -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.05);
   -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.05);
   box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.05);
 }
+.details{
+  float:left;
+  width:60%;
+  margin:0 0 0 15px;
+}
 .entity ul{
   list-style-type: none;
-  margin:0 0 0 15px;
-  padding:0;
-  float:left;
+  margin:0;
+  padding:20px 0;
+  border-top:2px dotted #e9eaea;
+}
+.entity ul:first-child{
+  padding:0 0 20px 0;
+  border:none;
 }
 .entity li{
   margin:3px 0 4px 0;
   font-size:18px;
 }
 .entity li:first-child{
-  font-size:28px;
+  font-size:24px;
 }
 .entity ul span{
   margin-right:8px;
@@ -350,7 +364,7 @@ input[type="submit"]:active{
   padding-left:1px;
   width:60px;
   height:60px;
-  font-size:30px;
+  font-size:28px;
   line-height: 60px;
   text-align: center;
   background-color: rgba(99,102,103,.9);
@@ -358,47 +372,48 @@ input[type="submit"]:active{
   -webkit-box-shadow: inset 2px 3px 3px 0px rgba(0,0,0,0.15);
   -moz-box-shadow: inset 2px 3px 3px 0px rgba(0,0,0,0.15);
   box-shadow: inset 2px 3px 3px 0px rgba(0,0,0,0.15);
-  -webkit-border-radius: 40px; 
-  -moz-border-radius: 40px; 
-  border-radius:40px;
+  -webkit-border-radius: 60px; 
+  -moz-border-radius: 60px; 
+  border-radius:60px;
 }
 
 .phone-data .icon-pro{
+  margin-top:-5px;
   display: inline-block;
   padding:5px;
   background-color: rgba(99,102,103,.9);
-  -webkit-border-radius: 45px; 
-  -moz-border-radius: 45px; 
-  border-radius:45px;
+  -webkit-border-radius: 75px; 
+  -moz-border-radius: 75px; 
+  border-radius:75px;
 }
 
 .phone-data .icon-pro span{
-  width:65px;
-  height:65px;
+  width:75px;
+  height:75px;
   font-size:38px;
-  line-height: 63px;
+  line-height: 73px;
   border:5px solid #fff;
 }
 
 .has-app{
-  padding:0 10px 0 30px;
+  padding:0;
+  margin:20px 0 0 0;
+  font-size:21px;
 }
-.has-app span{
+.entity ul .icon-pro2{
+  color:#4f4f4f;
   margin-right:10px;
-}
-.has-app p{
-  margin-left:130px;
 }
 
 
 /*CLEARFIXES*/
-.content:before, .left-col:before, .right-col:before, .entity:before,
-.content:after, .left-col:after, .right-col:after, .entity:after {
+.content:before, .left-col:before, .right-col:before, .entity:before, .icon-pro4:before,
+.content:after, .left-col:after, .right-col:after, .entity:after, .icon-pro4:after {
   display: table;
   content: " ";
 }
 
-.content:after, .left-col:after, .right-col:after, .entity:after {
+.content:after, .left-col:after, .right-col:after, .entity:after, .icon-pro4:after {
   clear: both;
 }
 
@@ -417,10 +432,10 @@ input[type="submit"]:active{
     margin:auto;
   }
   .left-col{
-    width:35%;
+    width:37%;
   }
   .right-col{
-    width:65%;
+    width:63%;
     margin-top:15px;
   }
   .phone{
@@ -457,15 +472,18 @@ input[type="submit"]:active{
     position:fixed;
   }
   .output .right-col{
-    width:50%;
+    width:52%;
     margin: 0 0 0 43.5%;
   }
   .entity li{
     margin:3px 0 4px 0;
     font-size:16px;
   }
-  .entity li:first-child{
+  .entity ul:first-child li:first-child{
     font-size:24px;
+  }
+  .entity li:first-child{
+    font-size:18px;
   }
 }
 
@@ -528,4 +546,19 @@ input[type="submit"]:active{
   .output .entity{
     width:auto;
   }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+}
+/*******
+iPad 3
+*******/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+
 }
